@@ -16,11 +16,11 @@
 
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="{% static 'blog/css/blog-post.css' %}" media="screen">
+  <script src="https://kit.fontawesome.com/87d390e844.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -31,9 +31,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
+            <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>
@@ -84,6 +82,23 @@
 
         <!-- Post Content -->
         <p>{{ post.content }}</p>
+
+        {% if post.file_upload %}
+        <a href = "{{ post.file_upload.url }}" class="btn btn-secondary" tabindex="-1" aria-disabled="true" role="button" download>
+          Download:
+
+          {% if post.get_file_ext == 'csv' %}
+            <i class = "fas fa-file-csv"></i>
+          {% elif post.get_file_ext == 'xlsx' or post.get_file_ext == 'xls' %}
+            <i class = "fas fa-file-excel"></i>
+          {% elif post.get_file_ext == 'docx' or post.get_file_ext == 'doc' %}
+            <i class = "fas fa-file-word"></i>
+          {% else %}
+            <i class = "fas fa-file"></i>
+          {% endif %}
+          {{ post.get_file_name }}
+        </a>
+        {% endif %}
         <hr>
 
         <!-- Comments Form -->
