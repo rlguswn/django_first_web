@@ -32,7 +32,7 @@ class TestView(TestCase):
             title = '첫 번째 포스트입니다.',
             content = 'Hello World'
         )
-        post_001 = Post.objects.create(
+        post_002 = Post.objects.create(
             title='두 번째 포스트입니다.',
             content='We are same'
         )
