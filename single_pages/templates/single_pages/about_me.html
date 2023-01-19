@@ -1,18 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>rlguswn의 블로그</title>
+    <title>About rlguswn</title>
+
+    <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'single_pages/css/about_me.css' %}" media="screen">
+
+    <script src="https://kit.fontawesome.com/87d390e844.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<nav>
-  <a href = "/blog/">Blog</a>
-  <a href = "/about_me/">about_me</a>
-</nav>
 
-<h1>Hi, i'm rlguswn</h1>
-<h2>Portfolio</h2>
-<h3>Create blog with django</h3>
+{% include 'blog/navbar.html' %}
 
+<section>
+    <div class="container" mt-4>
+        <div class="row">
+            <div class="col-lg-8">
+                <h1></h1>Hi, i'm rlguswn</h1>
+                <p class="lead">
+                    저는 프로그래밍에 관심이 있습니다
+                </p>
+                <ul>
+                    <li>Interested in</li>
+                    <ul>
+                        <li>Python</li>
+                        <li>C++</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <img class="img-fluid" src="{% static 'single_pages/images/strangecat.jpg %}">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light margin-for-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>PORTFOLIO</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card" data-toggle="modal" data-target="#pycon2017">
+                    <img class="card-img-top" src="{% static 'single_pages/images/strangecat.jpg' %}">
+                    <div class="card-body">
+                        <h5 class="card-title">파이썬에서 통계업무 자동화하기 [PYCON 2017]</h5>
+                        <p>Python, Django, Pandas, python-docx로 통계업무 자동화한 내용을 파이콘에서 발표했습니다</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card" data-toggle="modal" data-target="#inflearn_django2"?>
+                    <img class="card-img-top" src="{% static 'single_pages/images/strangecat.jpg' %}">
+                    <div class="card-body">
+                        <h5 class="card-title">직장인을 위한 프로그래밍 입문</h5>
+                        <p>파이썬 업무자동화에 대한 정보</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="fixed-bottom">
+    {% include 'blog/footer.html' %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 </body>
 </html>
